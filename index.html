@@ -3,208 +3,116 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Name · Frontend Dev 個人品牌網站</title>
-  <meta name="description" content="這是用來介紹個人背景、技能、作品集與聯絡方式的個人品牌網站，提供前端開發者作品展示與聯絡資訊。">
-  
+  <title>個人品牌網站 · Frontend Dev</title>
+  <meta name="description" content="這是用來介紹個人背景、技能、作品集與聯絡方式的網站，提供前端工程師自我介紹、作品展示與聯絡資訊。2025 Vibe coding課程的任務二">
   <style>
     /* CSS:BASE-START */
-    *, *::before, *::after {
-      box-sizing: border-box;
-    }
-
+    *, *::before, *::after { box-sizing: border-box; }
     body {
       margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      background-color: #0b1a2a; /* 深藍背景 */
-      color: #e0e0e0; /* 淺灰文字 */
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background-color: #0f111a;
+      color: #e0e0e0;
       line-height: 1.6;
     }
-
-    .page {
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-
-    .container {
-      width: 90%;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    a {
-      color: #4fc3f7; /* 主色 */
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
+    .page { display: flex; flex-direction: column; min-height: 100vh; }
+    .container { max-width: 1200px; padding: 0 1rem; margin: 0 auto; }
+    img { max-width: 100%; height: auto; display: block; }
+    a { text-decoration: none; color: inherit; }
+    button { cursor: pointer; }
     /* CSS:BASE-END */
 
     /* CSS:HERO-START */
-    .section-hero {
-      padding: 4rem 0;
-      text-align: center;
-      background: url('https://source.unsplash.com/1200x600/?developer,laptop') center/cover no-repeat;
-      color: #ffffff;
-    }
-
-    .section-hero h1 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-
-    .section-hero p {
-      font-size: 1rem;
-      margin-bottom: 0.5rem;
-    }
+    .section-hero { padding: 6rem 1rem 4rem; text-align: center; }
+    .section-hero h1 { font-size: 2.5rem; color: #4fc3f7; margin-bottom: 1rem; }
+    .section-hero p { max-width: 600px; margin: 0.5rem auto; }
     /* CSS:HERO-END */
 
     /* CSS:ABOUT-START */
-    .section-about {
-      padding: 4rem 0;
-    }
-
-    .section-about .section-title {
-      font-size: 1.75rem;
-      margin-bottom: 1rem;
-      color: #4fc3f7;
-    }
-
-    .section-about p {
-      margin-bottom: 1rem;
-    }
+    .section-about { padding: 4rem 1rem; background-color: #131722; }
+    .section-about .about-wrapper { display: flex; flex-direction: column; align-items: center; gap: 2rem; }
+    .section-about .about-text { max-width: 600px; }
+    .section-about .about-text h2 { font-size: 2rem; color: #4fc3f7; margin-bottom: 1rem; }
+    .section-about .about-text p { margin-bottom: 1rem; }
+    .section-about .about-text ul { list-style-type: disc; padding-left: 1.2rem; margin-bottom: 1rem; }
+    .section-about .about-text ul li { margin-bottom: 0.5rem; }
+    .section-about .about-image { max-width: 400px; border-radius: 8px; }
+    .section-about .about-buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .section-about .about-buttons a { background-color: #4fc3f7; color: #0f111a; padding: 0.6rem 1.2rem; border-radius: 4px; transition: background-color 0.3s; }
+    .section-about .about-buttons a:hover { background-color: #359fd6; }
     /* CSS:ABOUT-END */
 
     /* CSS:SKILLS-START */
-    .section-skills {
-      padding: 4rem 0;
-    }
-
-    .section-skills .section-title {
-      font-size: 1.75rem;
-      margin-bottom: 1rem;
-      color: #4fc3f7;
-    }
-
-    .section-skills p {
-      margin-bottom: 1rem;
-    }
+    .section-skills { padding: 4rem 1rem; }
+    .section-skills h2 { font-size: 2rem; color: #4fc3f7; margin-bottom: 1rem; }
     /* CSS:SKILLS-END */
 
     /* CSS:PROJECTS-START */
-    .section-projects {
-      padding: 4rem 0;
-    }
-
-    .section-projects .section-title {
-      font-size: 1.75rem;
-      margin-bottom: 1rem;
-      color: #4fc3f7;
-    }
-
-    .section-projects p {
-      margin-bottom: 1rem;
-    }
+    .section-projects { padding: 4rem 1rem; }
+    .section-projects h2 { font-size: 2rem; color: #4fc3f7; margin-bottom: 1rem; }
     /* CSS:PROJECTS-END */
 
     /* CSS:CONTACT-START */
-    .section-contact {
-      padding: 4rem 0;
-    }
-
-    .section-contact .section-title {
-      font-size: 1.75rem;
-      margin-bottom: 1rem;
-      color: #4fc3f7;
-    }
-
-    .section-contact p {
-      margin-bottom: 1rem;
-    }
+    .section-contact { padding: 4rem 1rem; background-color: #131722; }
+    .section-contact h2 { font-size: 2rem; color: #4fc3f7; margin-bottom: 1rem; }
     /* CSS:CONTACT-END */
 
     /* CSS:RWD-START */
     @media (min-width: 768px) {
-      .section-hero h1 {
-        font-size: 3rem;
-      }
-
-      .section-about, .section-projects {
-        display: flex;
-        gap: 2rem;
-      }
-
-      .section-about .container, .section-projects .container {
-        flex: 1;
-      }
+      .section-about .about-wrapper { flex-direction: row; align-items: flex-start; justify-content: space-between; }
+      .section-about .about-text { flex: 1; margin-right: 2rem; }
+      .section-about .about-image { flex: 1; }
+    }
+    @media (min-width: 1024px) {
+      .section-hero h1 { font-size: 3rem; }
+      .section-about .about-text h2 { font-size: 2.2rem; }
     }
     /* CSS:RWD-END */
-
-    /* 導覽列 */
-    .site-header {
-      position: sticky;
-      top: 0;
-      background-color: #102d44;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.5);
-      z-index: 999;
-    }
-
-    .nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 5%;
-    }
-
-    .nav a.nav-link {
-      margin-left: 1rem;
-      font-weight: 500;
-    }
-
-    .nav a.nav-link:hover {
-      color: #81d4fa;
-    }
   </style>
 </head>
 <body>
   <div class="page">
     <header class="site-header">
-      <nav class="nav">
+      <div class="container nav">
         <div class="logo">Your Name · Frontend Dev</div>
-        <div class="nav-links">
-          <a href="#hero" class="nav-link">首頁</a>
-          <a href="#about" class="nav-link">關於我</a>
-          <a href="#skills" class="nav-link">技能</a>
-          <a href="#projects" class="nav-link">作品集</a>
-          <a href="#contact" class="nav-link">聯絡我</a>
-        </div>
-      </nav>
+        <nav>
+          <a class="nav-link" href="#hero">首頁</a>
+          <a class="nav-link" href="#about">關於我</a>
+          <a class="nav-link" href="#skills">技能</a>
+          <a class="nav-link" href="#projects">作品集</a>
+          <a class="nav-link" href="#contact">聯絡我</a>
+        </nav>
+      </div>
     </header>
-
     <main>
       <!-- SECTION:HERO-START -->
       <section id="hero" class="section section-hero">
         <h1>個人品牌網站主視覺區</h1>
-        <p>這裡將放置一句話自我介紹，例如「您好，我是前端開發者 Your Name」。</p>
-        <p>核心職稱 / 角色：Frontend Developer</p>
-        <p>行動呼籲：瀏覽作品集或下載履歷</p>
+        <p>這裡會放置一句簡短自我介紹，描述核心職稱與角色。</p>
         <p>之後會用 Section SDD 的 Prompt 產生正式文案與版面，再把整個 section 貼回來取代這一區。</p>
       </section>
       <!-- SECTION:HERO-END -->
 
       <!-- SECTION:ABOUT-START -->
       <section id="about" class="section section-about" aria-labelledby="about-heading">
-        <div class="container">
-          <h2 id="about-heading" class="section-title">關於我（之後會用 Section SDD 替換）</h2>
-          <p>這裡目前是 About 區的占位內容，之後會用另一個 Prompt 產生正式內容，請把新的 section 程式碼整段貼回來，取代這一區。</p>
+        <div class="container about-wrapper">
+          <div class="about-text">
+            <h2 id="about-heading">關於我</h2>
+            <p>我目前是一名前端工程師，專注於 Web 開發、教學與接案，主要技能包含 HTML、CSS、React 與 RWD 設計。</p>
+            <p>我重視溝通與教學，喜歡把技術概念講清楚，並在工作中追求簡潔、有效率的解決方案。</p>
+            <ul>
+              <li>前端專案開發與維護</li>
+              <li>提供教學與技術分享</li>
+              <li>協助規劃與優化 UI/UX</li>
+            </ul>
+            <div class="about-buttons">
+              <a href="#projects">查看作品集</a>
+              <a href="#contact">聯絡我</a>
+            </div>
+          </div>
+          <div class="about-image">
+            <img src="https://plus.unsplash.com/premium_photo-1721664324952-725d14519100?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="在電腦前專注工作的前端工程師" loading="lazy">
+          </div>
         </div>
       </section>
       <!-- SECTION:ABOUT-END -->
@@ -236,10 +144,9 @@
       </section>
       <!-- SECTION:CONTACT-END -->
     </main>
-
     <footer class="site-footer">
-      <div class="container" style="text-align:center; padding:2rem 0; color:#aaa;">
-        © 2025 Your Name · Frontend Dev. All Rights Reserved.
+      <div class="container">
+        <p>© 2025 Your Name · Frontend Dev. All rights reserved.</p>
       </div>
     </footer>
   </div>
